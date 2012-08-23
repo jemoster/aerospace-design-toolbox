@@ -4,26 +4,26 @@
 %parseST and the other functions detailed here get a filename as an 
 %argument.  The file should contain the data dumped by AVL using the 
 %ST menu.
-myST = parseST('./plane1690.st')
+myST = parseST('./sampleData/plane1690.st')
 
 %Access any data field like this:
 myST.CLa
 
 %parseSB similar to parseST but for SB files
-mySB = parseSB('./plane2243.sb')
+mySB = parseSB('./sampleData/plane2243.sb')
 
 %Access any data field like this:
 mySB.CXu
 
 %The parseRunCase and parse Config functions work on ST, SB, and other AVL
 %generated files
-runCaseST = parseRunCase('./plane1690.st')
-myConfigST = parseConfig('./plane1690.st')
+runCaseST = parseRunCase('./sampleData/plane1690.st')
+myConfigST = parseConfig('./sampleData/plane1690.st')
 
 fprintf(1,'This aircraft was analyzed at an alpha of %f \n', runCaseST.alpha);
 
-runCaseSB = parseRunCase('./plane2243.sb');
-myConfigSB = parseConfig('./plane2243.sb');
+runCaseSB = parseRunCase('./sampleData/plane2243.sb');
+myConfigSB = parseConfig('./sampleData/plane2243.sb');
 
 fprintf(1,'This next aircraft was analyzed at an alpha of %f \n', runCaseSB.alpha);
 fprintf(1,'It has a S reference area of %f \n', myConfigSB.Sref);
@@ -43,10 +43,10 @@ fprintf(1,'It has a S reference area of %f \n', myConfigSB.Sref);
 %that you gave the surfaces when you created the AVL model, so you should
 %know them or at least look them up before using this function.
 
-mySurfaces = parseSF('./plane9001.sf');
+mySurfaces = parseSF('./sampleData/plane9001.sf');
 
 %Easily get the index of a particular surface whose name we know
-sIndex = getSurfaceByName(Surfaces,'Wing-Right');
+sIndex = getSurfaceByName(mySurfaces,'Wing-Right');
 
 %Get the strip forces for the surface
 myStripForces = mySurfaces(sIndex).strip;
