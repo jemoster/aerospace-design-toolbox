@@ -1,4 +1,5 @@
 function [ sd ] = parseSB( filename )
+% Copyright 2012 Joseph Moster
 
 file = textread(filename, '%s', 'delimiter', '\n','whitespace', '');
 i=1;
@@ -51,35 +52,35 @@ while i<length(file)
         sd.surface = [];
         rc = parseRunCase(filename);
         for surf=1:length(rc.surface)
-           sd.surface(surf).name = rc.surface(surf).name;
-           sd.surface(surf).CX   = findValue(strcat('CXd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).CY   = findValue(strcat('CYd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).CZ   = findValue(strcat('CZd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).Cl   = findValue(strcat('Cld',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).Cm   = findValue(strcat('Cmd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).Cn   = findValue(strcat('Cnd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).name = rc.surface(surf).name;
+            sd.surface(surf).CX   = findValue(strcat('CXd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).CY   = findValue(strcat('CYd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).CZ   = findValue(strcat('CZd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).Cl   = findValue(strcat('Cld',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).Cm   = findValue(strcat('Cmd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).Cn   = findValue(strcat('Cnd',num2str(surf),' ='), [i,length(file)]);
         end
         break;
     end
     i=i+1;
 end
 
-function [value] = findValue(string, area)
-    for z=area(1):area(2)
-        str = char(file(z));
-        header = regexp(str, string);
-        if(length(header)>0)
-            str = str(header+length(string):length(str));
-            s2 = regexp(str, ' ', 'split');
-            for j = 1:length(s2)
-                if(length(char(s2(j)))>1)
-                   value = str2double(char(s2(j)));
-                   return;
+    function [value] = findValue(string, area)
+        for z=area(1):area(2)
+            str = char(file(z));
+            header = regexp(str, string);
+            if(length(header)>0)
+                str = str(header+length(string):length(str));
+                s2 = regexp(str, ' ', 'split');
+                for j = 1:length(s2)
+                    if(length(char(s2(j)))>1)
+                        value = str2double(char(s2(j)));
+                        return;
+                    end
                 end
             end
         end
-    end    
-end
+    end
 
 end
 

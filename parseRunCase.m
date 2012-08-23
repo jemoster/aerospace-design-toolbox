@@ -1,6 +1,5 @@
 function [ rc ] = parseRunCase( filename )
 % Copyright 2012 Joseph Moster
-%This script does not parse the control surface data
 
 file = textread(filename, '%s', 'delimiter', '\n','whitespace', '');
 i=1;
@@ -43,12 +42,12 @@ while i<length(file)
         while j<length(file)
             str = char(file(j));
             name = regexpi(str, '[a-z]', 'match');
-            name = [name{:}];            
+            name = [name{:}];
             if(~isempty(name))
-                rc.surface(s).name = name;               
+                rc.surface(s).name = name;
                 s1 = regexpi(str, '=', 'split');
                 rc.surface(s).angle = str2double(s1(2));
-                s=s+1;                
+                s=s+1;
             elseif(isempty(str))
                 break;
             end
@@ -58,8 +57,6 @@ while i<length(file)
     end
     i=i+1;
 end
-
-
 
     function [value] = findValue(string, area)
         for z=area(1):area(2)

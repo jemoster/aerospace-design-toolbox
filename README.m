@@ -1,8 +1,8 @@
 % Copyright 2012 Joseph Moster
 
 %% Basics
-%parseST and the other functions detailed here get a filename as an 
-%argument.  The file should contain the data dumped by AVL using the 
+%parseST and the other functions detailed here get a filename as an
+%argument.  The file should contain the data dumped by AVL using the
 %ST menu.
 myST = parseST('./sampleData/plane1690.st')
 

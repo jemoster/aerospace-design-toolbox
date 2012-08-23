@@ -1,6 +1,5 @@
 function [ sd ] = parseST( filename )
 % Copyright 2012 Joseph Moster
-%This script does not parse the control surface stability data
 
 file = textread(filename, '%s', 'delimiter', '\n','whitespace', '');
 i=1;
@@ -25,7 +24,7 @@ while i<length(file)
         sd.Clp = findValue('Clp =', [i,length(file)]);
         sd.Cmp = findValue('Cmp =', [i,length(file)]);
         sd.Cnp = findValue('Cnp =', [i,length(file)]);
-
+        
         sd.CLq = findValue('CLq =', [i,length(file)]);
         sd.CYq = findValue('CYq =', [i,length(file)]);
         sd.Clq = findValue('Clq =', [i,length(file)]);
@@ -43,14 +42,14 @@ while i<length(file)
         sd.surface = [];
         rc = parseRunCase(filename);
         for surf=1:length(rc.surface)
-           sd.surface(surf).name = rc.surface(surf).name;
-           sd.surface(surf).CL   = findValue(strcat('CLd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).CY   = findValue(strcat('CYd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).Cl   = findValue(strcat('Cld',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).Cm   = findValue(strcat('Cmd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).Cn   = findValue(strcat('Cnd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).CDff   = findValue(strcat('CDffd',num2str(surf),' ='), [i,length(file)]);
-           sd.surface(surf).e   = findValue(strcat('ed',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).name = rc.surface(surf).name;
+            sd.surface(surf).CL   = findValue(strcat('CLd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).CY   = findValue(strcat('CYd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).Cl   = findValue(strcat('Cld',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).Cm   = findValue(strcat('Cmd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).Cn   = findValue(strcat('Cnd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).CDff   = findValue(strcat('CDffd',num2str(surf),' ='), [i,length(file)]);
+            sd.surface(surf).e   = findValue(strcat('ed',num2str(surf),' ='), [i,length(file)]);
         end
         
         break;
@@ -58,22 +57,22 @@ while i<length(file)
     i=i+1;
 end
 
-function [value] = findValue(string, area)
-    for z=area(1):area(2)
-        str = char(file(z));
-        header = regexp(str, string);
-        if(length(header)>0)
-            str = str(header+length(string):length(str));
-            s2 = regexp(str, ' ', 'split');
-            for j = 1:length(s2)
-                if(length(char(s2(j)))>1)
-                   value = str2double(char(s2(j)));
-                   return;
+    function [value] = findValue(string, area)
+        for z=area(1):area(2)
+            str = char(file(z));
+            header = regexp(str, string);
+            if(length(header)>0)
+                str = str(header+length(string):length(str));
+                s2 = regexp(str, ' ', 'split');
+                for j = 1:length(s2)
+                    if(length(char(s2(j)))>1)
+                        value = str2double(char(s2(j)));
+                        return;
+                    end
                 end
             end
         end
-    end    
-end
+    end
 
 end
 
