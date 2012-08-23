@@ -1,0 +1,51 @@
+ ---------------------------------------------------------------
+ Vortex Lattice Output -- Total Forces
+
+ Configuration: LoneWolf                                                    
+     # Surfaces =   4
+     # Strips   =  80
+     # Vortices = 960
+
+  Sref = 0.21600       Cref = 0.24000       Bref = 0.90000    
+  Xref =  1.6000       Yref =  0.0000       Zref = 0.50000E-01
+
+ Standard axis orientation,  X fwd, Z down         
+
+ Run case:  -unnamed-                              
+
+  Alpha =   3.15050     pb/2V =   0.00000     p'b/2V =   0.00000
+  Beta  =   0.00000     qc/2V =   0.00000
+  Mach  =     0.000     rb/2V =   0.00000     r'b/2V =   0.00000
+
+  CXtot =  -0.04989     Cltot =   0.00000     Cl'tot =   0.00000
+  CYtot =   0.00000     Cmtot =   4.98878
+  CZtot =  -0.75715     Cntot =   0.00000     Cn'tot =   0.00000
+
+  CLtot =   0.75326
+  CDtot =   0.09143
+  CDvis =   0.03200     CDind =   0.05943
+  CLff  =   0.75571     CDff  =  -0.11178    | Trefftz
+  CYff  =   0.00000         e =   -0.4337    | Plane  
+
+
+ ---------------------------------------------------------------
+
+ Geometry-axis derivatives...
+
+                    axial   vel. u     sideslip vel. v      normal  vel. w
+                  ----------------    ----------------    ----------------
+ x force CX  |    CXu =  -0.122091    CXv =   0.000000    CXw =   0.402608
+ y force CY  |    CYu =   0.000000    CYv =  -0.259209    CYw =   0.000000
+ z force CZ  |    CZu =  -1.299883    CZv =   0.000000    CZw =  -3.937069
+ x mom.  Cl  |    Clu =   0.000000    Clv =  -0.119866    Clw =   0.000000
+ y mom.  Cm  |    Cmu =   8.541870    Cmv =   0.000000    Cmw =  26.358013
+ z mom.  Cn  |    Cnu =   0.000000    Cnv =  -0.382387    Cnw =   0.000000
+
+                      roll rate  p       pitch rate  q         yaw rate  r
+                  ----------------    ----------------    ----------------
+ x force CX  |    CXp =   0.000000    CXq =  -5.489378    CXr =   0.000000
+ y force CY  |    CYp =   0.133441    CYq =   0.000000    CYr =  -0.687690
+ z force CZ  |    CZp =   0.000000    CZq =  46.570580    CZr =   0.000000
+ x mom.  Cl  |    Clp =  -0.340165    Clq =  -0.000006    Clr =  -0.254310
+ y mom.  Cm  |    Cmp =  -0.000001    Cmq =-318.961945    Cmr =   0.000001
+ z mom.  Cn  |    Cnp =   0.182225    Cnq =  -0.000001    Cnr =  -1.168117
