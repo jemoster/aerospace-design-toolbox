@@ -18,7 +18,7 @@ while i<length(file)
         
         rc.CXtot = findValue('CXtot =', [i,length(file)]);
         rc.CYtot = findValue('CYtot =', [i,length(file)]);
-        rc.CXtot = findValue('CZtot =', [i,length(file)]);
+        rc.CZtot = findValue('CZtot =', [i,length(file)]);
         rc.Cltot = findValue('Cltot =', [i,length(file)]);
         rc.Cmtot = findValue('Cmtot =', [i,length(file)]);
         rc.Cntot = findValue('Cntot =', [i,length(file)]);
