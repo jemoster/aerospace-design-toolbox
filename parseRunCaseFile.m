@@ -24,69 +24,39 @@ while i<fileLen
         end
         
         %Read off values
-        rc(runcase).alpha     =   findValue('alpha', [i,fileLen]);
-        rc(runcase).beta      =   findValue('beta', [i,fileLen]);
-        rc(runcase).pb2V     =   findValue('pb/2V', [i,fileLen]);
-        rc(runcase).qc2V     =   findValue('qc/2V', [i,fileLen]);
-        rc(runcase).rb2V     =   findValue('rb/2V', [i,fileLen]);
-        rc(runcase).CL        =  findValue('CL', [i,fileLen]);
-        rc(runcase).CD0       =  findValue('CDo', [i,fileLen]);
-        rc(runcase).bank      =   findValue('bank', [i,fileLen]);
-        rc(runcase).elevation =   findValue('elevation', [i,fileLen]);
-        rc(runcase).heading   =   findValue('heading', [i,fileLen]);
-        rc(runcase).Mach      =   findValue('Mach', [i,fileLen]);
-        rc(runcase).velocity  =   findValue('velocity', [i,fileLen]);
-        rc(runcase).density   =  findValue('density', [i,fileLen]);
-        rc(runcase).grav_acc =   findValue('grav.acc.', [i,fileLen]);
-        rc(runcase).turn_rad =   findValue('turn_rad.', [i,fileLen]);
-        rc(runcase).load_fac =   findValue('load_fac.', [i,fileLen]);
-        rc(runcase).X_cg      =   findValue('X_cg', [i,fileLen]);
-        rc(runcase).Y_cg      =   findValue('Y_cg', [i,fileLen]);
-        rc(runcase).Z_cg      =   findValue('Z_cg', [i,fileLen]);
-        rc(runcase).mass      =  findValue('mass', [i,fileLen]);
-        rc(runcase).Ixx       =   findValue('Ixx', [i,fileLen]);
-        rc(runcase).Iyy       =   findValue('Iyy', [i,fileLen]);
-        rc(runcase).Izz       =   findValue('Izz', [i,fileLen]);
-        rc(runcase).Ixy       =   findValue('Ixy', [i,fileLen]);
-        rc(runcase).Iyz       =   findValue('Iyz', [i,fileLen]);
-        rc(runcase).Izx       =   findValue('Izx', [i,fileLen]);
-        rc(runcase).visc_CL_a =   findValue('visc CL_a', [i,fileLen]);
-        rc(runcase).visc_CL_u =   findValue('visc CL_u', [i,fileLen]);
-        rc(runcase).visc_CM_a =   findValue('visc CM_a', [i,fileLen]);
-        rc(runcase).visc_CM_u =   findValue('visc CM_u', [i,fileLen]);
+        rc(runcase).alpha     =   findValue(file,'alpha', [i,fileLen]);
+        rc(runcase).beta      =   findValue(file,'beta', [i,fileLen]);
+        rc(runcase).pb2V     =   findValue(file,'pb/2V', [i,fileLen]);
+        rc(runcase).qc2V     =   findValue(file,'qc/2V', [i,fileLen]);
+        rc(runcase).rb2V     =   findValue(file,'rb/2V', [i,fileLen]);
+        rc(runcase).CL        =  findValue(file,'CL', [i,fileLen]);
+        rc(runcase).CD0       =  findValue(file,'CDo', [i,fileLen]);
+        rc(runcase).bank      =   findValue(file,'bank', [i,fileLen]);
+        rc(runcase).elevation =   findValue(file,'elevation', [i,fileLen]);
+        rc(runcase).heading   =   findValue(file,'heading', [i,fileLen]);
+        rc(runcase).Mach      =   findValue(file,'Mach', [i,fileLen]);
+        rc(runcase).velocity  =   findValue(file,'velocity', [i,fileLen]);
+        rc(runcase).density   =  findValue(file,'density', [i,fileLen]);
+        rc(runcase).grav_acc =   findValue(file,'grav.acc.', [i,fileLen]);
+        rc(runcase).turn_rad =   findValue(file,'turn_rad.', [i,fileLen]);
+        rc(runcase).load_fac =   findValue(file,'load_fac.', [i,fileLen]);
+        rc(runcase).X_cg      =   findValue(file,'X_cg', [i,fileLen]);
+        rc(runcase).Y_cg      =   findValue(file,'Y_cg', [i,fileLen]);
+        rc(runcase).Z_cg      =   findValue(file,'Z_cg', [i,fileLen]);
+        rc(runcase).mass      =  findValue(file,'mass', [i,fileLen]);
+        rc(runcase).Ixx       =   findValue(file,'Ixx', [i,fileLen]);
+        rc(runcase).Iyy       =   findValue(file,'Iyy', [i,fileLen]);
+        rc(runcase).Izz       =   findValue(file,'Izz', [i,fileLen]);
+        rc(runcase).Ixy       =   findValue(file,'Ixy', [i,fileLen]);
+        rc(runcase).Iyz       =   findValue(file,'Iyz', [i,fileLen]);
+        rc(runcase).Izx       =   findValue(file,'Izx', [i,fileLen]);
+        rc(runcase).visc_CL_a =   findValue(file,'visc CL_a', [i,fileLen]);
+        rc(runcase).visc_CL_u =   findValue(file,'visc CL_u', [i,fileLen]);
+        rc(runcase).visc_CM_a =   findValue(file,'visc CM_a', [i,fileLen]);
+        rc(runcase).visc_CM_u =   findValue(file,'visc CM_u', [i,fileLen]);
         
         runcase = runcase+1;
     end
     i=i+1;
 end
-    function [val] = findValue(name,area)
-        %Check each line in the search area
-        for z=area(1):area(2)
-            %Get a line
-            str = char(file(z));
-            %Search the line for the keyword
-            header = regexp(str, name);
-            %If we found something
-            if(length(header)>0)
-                %Get the remainder of the string after the keyword
-                str = str(header+length(name):length(str));
-                %Split the string everytime a space is found
-                s2 = regexp(str, ' ', 'split');
-                %For each element
-                for j = 1:length(s2)
-                    if(~isempty(s2{j})) % && ~strcmp(s2(j),'=')
-                        val = str2double(char(s2(j)));
-                        if ~isnan(val)
-                            return;
-                        end
-                    end
-                end
-                warning(strcat('Could not find value for variable: ',name));
-            end
-        end
-        warning(strcat('Did not variable in file: ',name));
-        val = 0;
-    end
-
-
 end
