@@ -40,7 +40,7 @@ while i<length(file)
         sd.NP = findValue('Xnp =', [i,length(file)]);
         
         sd.surface = [];
-        rc = parseRunCase(filename);
+        rc = parseRunCaseHeader(filename);
         for surf=1:length(rc.surface)
             sd.surface(surf).name = rc.surface(surf).name;
             sd.surface(surf).CL   = findValue(strcat('CLd',num2str(surf),' ='), [i,length(file)]);

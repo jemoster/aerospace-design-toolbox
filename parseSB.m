@@ -50,7 +50,7 @@ while i<length(file)
         sd.Cnr = findValue('Cnr =', [i,length(file)]);
         
         sd.surface = [];
-        rc = parseRunCase(filename);
+        rc = parseRunCaseHeader(filename);
         for surf=1:length(rc.surface)
             sd.surface(surf).name = rc.surface(surf).name;
             sd.surface(surf).CX   = findValue(strcat('CXd',num2str(surf),' ='), [i,length(file)]);

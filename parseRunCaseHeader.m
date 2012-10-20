@@ -1,4 +1,4 @@
-function [ rc ] = parseRunCase( filename )
+function [ rc ] = parseRunCaseHeader( filename )
 % Copyright 2012 Joseph Moster
 
 file = textread(filename, '%s', 'delimiter', '\n','whitespace', '');

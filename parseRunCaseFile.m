@@ -56,7 +56,6 @@ while i<fileLen
         rc(runcase).visc_CM_u =   findValue('visc CM_u', [i,fileLen]);
         
         runcase = runcase+1;
-        %break;
     end
     i=i+1;
 end

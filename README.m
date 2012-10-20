@@ -15,14 +15,14 @@ mySB = parseSB('./sampleData/plane2243.sb')
 %Access any data field like this:
 mySB.CXu
 
-%The parseRunCase and parse Config functions work on ST, SB, and other AVL
+%The parseRunCaseHeader and parse Config functions work on ST, SB, and other AVL
 %generated files
-runCaseST = parseRunCase('./sampleData/plane1690.st')
+runCaseST = parseRunCaseHeader('./sampleData/plane1690.st')
 myConfigST = parseConfig('./sampleData/plane1690.st')
 
 fprintf(1,'This aircraft was analyzed at an alpha of %f \n', runCaseST.alpha);
 
-runCaseSB = parseRunCase('./sampleData/plane2243.sb');
+runCaseSB = parseRunCaseHeader('./sampleData/plane2243.sb');
 myConfigSB = parseConfig('./sampleData/plane2243.sb');
 
 fprintf(1,'This next aircraft was analyzed at an alpha of %f \n', runCaseSB.alpha);
