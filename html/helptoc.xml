@@ -1,12 +1,59 @@
-<?xml version='1.0' encoding='ISO-8859-1' ?>
-<toc version="1.0">
+<?xml version='1.0' encoding="utf-8"?>
 
-<tocitem target="kml.contents.html" image="HelpIcon.USER_GUIDE">KML Toolbox
-	<tocitem image="HelpIcon.FUNCTION">Useful functions
-		<tocitem image="HelpIcon.FUNCTION" target="kml.run.html">kml.run</tocitem>
+<toc version="2.0">
+<!-- First tocitem specifies top level in Help browser Contents pane -->
+<!-- This can be a roadmap page, as shown below, or a content page -->
+    <tocitem target="none.html">Aerospace Design Toolbox
+        <!-- Nest tocitems to create hierarchical entries in  Contents-->
+        <!-- To include icons, use the following syntax for tocitems: -->
+        <!-- <tocitem target="foo.html" image="HelpIcon.NAME"> -->
+        <!-- Title-of-Section </tocitem> -->
+        <!-- where NAME is one of the following (use capital letters): -->
+        <!-- FUNCTION, USER_GUIDE, EXAMPLES, BLOCK, GETTING_STARTED, -->
+        <!-- DEMOS, RELEASE_NOTES --> 
+        <!-- Icon images used for these entries are also stored in -->
+        <!-- matlabroot/toolbox/matlab/icons -->
+        <!-- A Getting Started Guide usually comes first -->
+        <tocitem target="mytbx_gs_top.html" image="HelpIcon.GETTING_STARTED">
+            Getting Started with the MyToolbox Toolbox
+            <tocitem target="mytbx_reqts_example.html">System Requirements
+            </tocitem>
+            <tocitem target="mytbx_features_example.html">Features
+                <!-- 2nd and lower TOC levels usually have anchor IDs -->
+                <tocitem target="mytbx_feature1_example.htm#10187">Feature 1
+                </tocitem>
+                <tocitem target="mytbx_feature2_example.htm#10193">Feature 2
+                </tocitem>
+            </tocitem>
+        </tocitem>
+        <!-- User Guide comes next -->
+        <tocitem target="mytbx_ug_intro.html" 
+            image="HelpIcon.USER_GUIDE">MyToolbox User Guide
+            <tocitem target="mytbx_ch_1.html">Setting Up MyToolbox
+            </tocitem>
+            <tocitem target="mytbx_ch_2.html">Processing Data
+            </tocitem>
+            <tocitem target="mytbx_ch_3.html">Verifying MyToolbox outputs 
+                <tocitem target="mytbx_ch_3a.html">Handling Test Failures
+                </tocitem>
+            </tocitem>
+        </tocitem>
+        <!-- Function reference next -->
+        <!-- First item is page describing function categories, if any -->
+        <tocitem target="helpfuncbycat.html" 
+                 image="HelpIcon.FUNCTION">Function Reference
+            <!-- First category, with link to anchor in above page -->
+            <tocitem target="helpfuncbycat.html#1">AVL
+                <!-- Inside category, list its functions alphabetically -->
+                <tocitem target="parseST_help.html">parseST</tocitem>
+                <tocitem target="parseSB.html">parseSB</tocitem>
+                <!-- ... -->
+            </tocitem>
+            <!-- Second category, with link to anchor in above page -->
+            <tocitem target="helpfuncbycat.html#2">XFoil
+                <!-- Inside category, list its functions alphabetically -->
+                <!-- ... -->
+            </tocitem>
 		</tocitem>
-	<tocitem image="HelpIcon.FUNCTION">Plotting functions
-		<tocitem image="HelpIcon.FUNCTION" target="kml.quiver3d.html">kml.quiver3d</tocitem>
-	</tocitem>
-</tocitem>
+    </tocitem>
 </toc>

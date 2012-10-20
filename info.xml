@@ -25,6 +25,22 @@
     <!-- Refresh the Start button to see your entries -->
     <!-- Remove this list if you do not want a Start button entry -->
     <list>
+         <listitem>
+            <!-- The label provides the text for this menu item --> 
+            <label>Help</label>
+            <!-- This callback is a command to open your documentation -->
+            <callback>doc</callback>
+              <!-- Menu item icon (a toolbox icon from the help browser ) -->
+              <icon>$toolbox/matlab/icons/book_mat.gif</icon>
+        </listitem>
+        <!--listitem>
+            <!- A menu item label for a opening a demo ->
+            <label>Demos</label>
+            <!- A command to open a demo if any ->
+            <callback>demo toolbox</callback>
+            <!- The icon for this menu item ->
+            <icon>$toolbox/matlab/icons/demoicon.gif</icon>
+        </listitem-->
         <listitem>
              <!-- Include call to open your Web site, if any -->
            <label>Developer Page (web)</label>
