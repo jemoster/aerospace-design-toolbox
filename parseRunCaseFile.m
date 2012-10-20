@@ -14,8 +14,8 @@ while i<fileLen
     
     if(length(header)>0)
         %load run case name
-        a = strtrim(regexpi(str,'Run case  \d:', 'split'))
-        rc(runcase).name = a(2);
+        a = strtrim(regexpi(str,'Run case  \d:', 'split'));
+        rc(runcase).name = char(a(2));
         
         %Skip remainder of header
         i=i+2;
