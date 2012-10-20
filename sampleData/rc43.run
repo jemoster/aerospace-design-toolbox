@@ -1,0 +1,132 @@
+
+ ---------------------------------------------
+ Run case  1:  Stall Cruise, 9.1554m/s                 
+
+ alpha        ->  CL          =   1.22000    
+ beta         ->  beta        =   0.00000    
+ pb/2V        ->  pb/2V       =   0.00000    
+ qc/2V        ->  qc/2V       =   0.00000    
+ rb/2V        ->  rb/2V       =   0.00000    
+ AILERON      ->  AILERON     =   0.00000    
+ ELEVATOR     ->  Cm pitchmom =   0.00000    
+ RUDDER       ->  RUDDER      =   0.00000    
+ EOF          ->  EOF         =   0.00000    
+
+ alpha     =   11.7234     deg                             
+ beta      =   0.00000     deg                             
+ pb/2V     =   0.00000                                     
+ qc/2V     =   0.00000                                     
+ rb/2V     =   0.00000                                     
+ CL        =   1.22000                                     
+ CDo       =  0.300000E-01                                 
+ bank      =   0.00000     deg                             
+ elevation =   0.00000     deg                             
+ heading   =   0.00000     deg                             
+ Mach      =   0.00000                                     
+ velocity  =   9.15544     Lunit/Tunit                     
+ density   =   1.22500     Munit/Lunit^3                   
+ grav.acc. =   9.80665     Lunit/Tunit^2                   
+ turn_rad. =   0.00000     Lunit                           
+ load_fac. =   1.00000                                     
+ X_cg      =  0.133000     Lunit                           
+ Y_cg      =   0.00000     Lunit                           
+ Z_cg      =   0.00000     Lunit                           
+ mass      =   3.96000     Munit                           
+ Ixx       =  0.191152     Munit-Lunit^2                   
+ Iyy       =  0.278284     Munit-Lunit^2                   
+ Izz       =  0.449904     Munit-Lunit^2                   
+ Ixy       =  0.603710E-05 Munit-Lunit^2                   
+ Iyz       = -0.165840E-05 Munit-Lunit^2                   
+ Izx       =  0.205926E-02 Munit-Lunit^2                   
+ visc CL_a =   0.00000                                     
+ visc CL_u =   0.00000                                     
+ visc CM_a =   0.00000                                     
+ visc CM_u =   0.00000                                     
+
+ ---------------------------------------------
+ Run case  2:  Loiter Cruise, 13.733m/s                
+
+ alpha        ->  CL          =  0.542235    
+ beta         ->  beta        =   0.00000    
+ pb/2V        ->  pb/2V       =   0.00000    
+ qc/2V        ->  qc/2V       =   0.00000    
+ rb/2V        ->  rb/2V       =   0.00000    
+ AILERON      ->  AILERON     =   0.00000    
+ ELEVATOR     ->  Cm pitchmom =   0.00000    
+ RUDDER       ->  RUDDER      =   0.00000    
+ EOF          ->  EOF         =   0.00000    
+
+ alpha     =   3.15419     deg                             
+ beta      =   0.00000     deg                             
+ pb/2V     =   0.00000                                     
+ qc/2V     =   0.00000                                     
+ rb/2V     =   0.00000                                     
+ CL        =  0.542235                                     
+ CDo       =  0.300000E-01                                 
+ bank      =   0.00000     deg                             
+ elevation =   0.00000     deg                             
+ heading   =   0.00000     deg                             
+ Mach      =   0.00000                                     
+ velocity  =   13.7330     Lunit/Tunit                     
+ density   =   1.22500     Munit/Lunit^3                   
+ grav.acc. =   9.80665     Lunit/Tunit^2                   
+ turn_rad. =   0.00000     Lunit                           
+ load_fac. =   1.00000                                     
+ X_cg      =  0.133000     Lunit                           
+ Y_cg      =   0.00000     Lunit                           
+ Z_cg      =   0.00000     Lunit                           
+ mass      =   3.96000     Munit                           
+ Ixx       =  0.191152     Munit-Lunit^2                   
+ Iyy       =  0.278284     Munit-Lunit^2                   
+ Izz       =  0.449904     Munit-Lunit^2                   
+ Ixy       =  0.603710E-05 Munit-Lunit^2                   
+ Iyz       = -0.165840E-05 Munit-Lunit^2                   
+ Izx       =  0.205926E-02 Munit-Lunit^2                   
+ visc CL_a =   0.00000                                     
+ visc CL_u =   0.00000                                     
+ visc CM_a =   0.00000                                     
+ visc CM_u =   0.00000                                     
+
+ ---------------------------------------------
+ Run case  3:  Dash Cruise, 17.8646m/s                 
+
+ alpha        ->  CL          =  0.320429    
+ beta         ->  beta        =   0.00000    
+ pb/2V        ->  pb/2V       =   0.00000    
+ qc/2V        ->  qc/2V       =   0.00000    
+ rb/2V        ->  rb/2V       =   0.00000    
+ AILERON      ->  AILERON     =   0.00000    
+ ELEVATOR     ->  Cm pitchmom =   0.00000    
+ RUDDER       ->  RUDDER      =   0.00000    
+ EOF          ->  EOF         =   0.00000    
+
+ alpha     =  0.431328     deg                             
+ beta      =   0.00000     deg                             
+ pb/2V     =   0.00000                                     
+ qc/2V     =   0.00000                                     
+ rb/2V     =   0.00000                                     
+ CL        =  0.320429                                     
+ CDo       =  0.300000E-01                                 
+ bank      =   0.00000     deg                             
+ elevation =   0.00000     deg                             
+ heading   =   0.00000     deg                             
+ Mach      =   0.00000                                     
+ velocity  =   17.8646     Lunit/Tunit                     
+ density   =   1.22500     Munit/Lunit^3                   
+ grav.acc. =   9.80665     Lunit/Tunit^2                   
+ turn_rad. =   0.00000     Lunit                           
+ load_fac. =   1.00000                                     
+ X_cg      =  0.133000     Lunit                           
+ Y_cg      =   0.00000     Lunit                           
+ Z_cg      =   0.00000     Lunit                           
+ mass      =   3.96000     Munit                           
+ Ixx       =  0.191152     Munit-Lunit^2                   
+ Iyy       =  0.278284     Munit-Lunit^2                   
+ Izz       =  0.449904     Munit-Lunit^2                   
+ Ixy       =  0.603710E-05 Munit-Lunit^2                   
+ Iyz       = -0.165840E-05 Munit-Lunit^2                   
+ Izx       =  0.205926E-02 Munit-Lunit^2                   
+ visc CL_a =   0.00000                                     
+ visc CL_u =   0.00000                                     
+ visc CM_a =   0.00000                                     
+ visc CM_u =   0.00000                                     
