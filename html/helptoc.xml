@@ -46,7 +46,11 @@
             <tocitem target="helpfuncbycat.html#1">AVL
                 <!-- Inside category, list its functions alphabetically -->
                 <tocitem target="parseST_help.html">parseST</tocitem>
-                <tocitem target="parseSB.html">parseSB</tocitem>
+                <tocitem target="parseSB_help.html">parseSB</tocitem>
+                <tocitem target="parseSF_help.html">parseSF</tocitem>
+                <tocitem target="parseConfig_help.html">parseConfig</tocitem>
+                <tocitem target="parseRunCaseFile_help.html">parseRunCaseFile</tocitem>
+                <tocitem target="parseRunCaseHeader_help.html">parseRunCaseHeader</tocitem>
                 <!-- ... -->
             </tocitem>
             <!-- Second category, with link to anchor in above page -->

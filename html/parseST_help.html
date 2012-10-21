@@ -55,39 +55,42 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>parseST</h1><!--introduction--><p>Parse the data from a file containing the output of AVL's ST command</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Description</a></li><li><a href="#2">Definitions</a></li><li><a href="#3">Reference</a></li><li><a href="#4">Example</a></li><li><a href="#5">See also</a></li></ul></div><h2>Description<a name="1"></a></h2><p><tt>[R, S] = demFlow(E, d1, d2)</tt> computes the flow direction and downslope for all the pixels in a digital elevation model <tt>E</tt>.  <tt>E</tt> is a matrix of elevation values.  <tt>d1</tt> and <tt>d2</tt> are the horizontal and vertical pixel center spacing.  <tt>d1</tt> and <tt>d2</tt> are optional; if omitted, a value of 1.0 is assumed.</p><h2>Definitions<a name="2"></a></h2><p><tt>R</tt>, a matrix the same size as <tt>E</tt>, contains the pixel flow direction, in radians, for each pixel of <tt>E</tt>.  Pixel flow direction is measured counter clockwise from the east-pointing horizontal axis.  <tt>R</tt> is NaN for each pixel of <tt>E</tt> that has no downhill neighbors.</p><p><tt>S</tt>, a matrix the same size as <tt>E</tt>, contains the downward slope (along the pixel flow direction) for each pixel of <tt>E</tt>.  Negative values indicate that the corresponding pixel of <tt>E</tt> has no downhill neighbors.</p><h2>Reference<a name="3"></a></h2><p>Tarboton, "A new method for the determination of flow directions and upslope areas in grid digital elevation models," <i>Water Resources Research</i>, vol. 33, no. 2, pages 309-319, February 1997.</p><h2>Example<a name="4"></a></h2><h2>See also<a name="5"></a></h2><p><a href="facetFlow_help.html"><tt>facetFlow</tt></a>, <a href="pixelFlow_help.html"><tt>pixelFlow</tt></a>, <a href="upslopeArea_help.html"><tt>upslopeArea</tt></a>, <a href="visDemFlow_help.html"><tt>visDemFlow</tt></a>.</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>parseST</h1><!--introduction--><p>Parse the data from a file containing the output of AVL's ST command</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Example</a></li><li><a href="#4">See also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p>parseST(filename)</p><h2>Description<a name="2"></a></h2><p>parseST and the other functions detailed here get a filename as an argument.  The file should contain the data dumped by AVL using the ST menu.</p><h2>Example<a name="3"></a></h2><pre class="codeinput">myST = parseST(<span class="string">'../sampleData/plane1690.st'</span>);
+
+<span class="comment">%Access any data field like this:</span>
+myST.CLa
+</pre><pre class="codeoutput">
+ans =
+
+    4.8186
+
+</pre><h2>See also<a name="4"></a></h2><p><a href="parseSB_help.html"><tt>parseSB</tt></a>, <a href="parseSF_help.html"><tt>parseSF</tt></a>, <a href="parseConfig_help.html"><tt>parseConfig</tt></a>, <a href="parseRunCaseHeader_help.html"><tt>parseRunCaseHeader</tt></a>, <a href="parseRunCaseFile_help.html"><tt>parseRunCaseFile</tt></a>.</p><p><i>Copyright 2012 Joseph Moster</i></p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% parseST
 % Parse the data from a file containing the output of AVL's ST command
 %
+%% Syntax
+% parseST(filename)
+%
 %% Description
-% |[R, S] = demFlow(E, d1, d2)| computes the flow direction and downslope
-% for all the pixels in a digital elevation model |E|.  |E| is a matrix of
-% elevation values.  |d1| and |d2| are the horizontal and vertical pixel
-% center spacing.  |d1| and |d2| are optional; if omitted, a value of 1.0 is
-% assumed.
-%
-%% Definitions
-% |R|, a matrix the same size as |E|, contains the pixel flow direction, in
-% radians, for each pixel of |E|.  Pixel flow direction is measured counter
-% clockwise from the east-pointing horizontal axis.  |R| is NaN for each pixel
-% of |E| that has no downhill neighbors.
-%
-% |S|, a matrix the same size as |E|, contains the downward slope (along the
-% pixel flow direction) for each pixel of |E|.  Negative values indicate that
-% the corresponding pixel of |E| has no downhill neighbors.
-%
-%% Reference
-% Tarboton, "A new method for the determination of flow
-% directions and upslope areas in grid digital elevation models," _Water
-% Resources Research_, vol. 33, no. 2, pages 309-319, February 1997. 
+% parseST and the other functions detailed here get a filename as an
+% argument.  The file should contain the data dumped by AVL using the
+% ST menu.
 %
 %% Example
 
+myST = parseST('../sampleData/plane1690.st');
+
+%Access any data field like this:
+myST.CLa
 
 %% See also 
-% <facetFlow_help.html |facetFlow|>, <pixelFlow_help.html |pixelFlow|>, <upslopeArea_help.html
-% |upslopeArea|>, <visDemFlow_help.html |visDemFlow|>. 
+% <parseSB_help.html |parseSB|>, <parseSF_help.html |parseSF|>,
+% <parseConfig_help.html |parseConfig|>,
+% <parseRunCaseHeader_help.html |parseRunCaseHeader|>, 
+% <parseRunCaseFile_help.html |parseRunCaseFile|>. 
+%
+% _Copyright 2012 Joseph Moster_
 ##### SOURCE END #####
 --></body></html>

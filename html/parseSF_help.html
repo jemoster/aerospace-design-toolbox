@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>parseSB</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2012-10-20"><meta name="DC.source" content="parseSB_help.m"><style type="text/css">
+      --><title>parseSF</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2012-10-20"><meta name="DC.source" content="parseSF_help.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,40 +55,66 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>parseSB</h1><!--introduction--><p>Parse the data from a file containing the output of AVL's SB command</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">Example</a></li><li><a href="#4">See also</a></li></ul></div><h2>Syntax<a name="1"></a></h2><p>parseSB(filename)</p><h2>Description<a name="2"></a></h2><p>desc...</p><h2>Example<a name="3"></a></h2><pre class="codeinput"><span class="comment">%parseSB similar to parseST but for SB files</span>
-mySB = parseSB(<span class="string">'../sampleData/plane2243.sb'</span>);
+  </style></head><body><div class="content"><h1>parseSF</h1><!--introduction--><p>Parse the data from a file containing the output of AVL's ST command</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Description</a></li><li><a href="#2">Definitions</a></li><li><a href="#3">Example</a></li><li><a href="#4">See also</a></li></ul></div><h2>Description<a name="1"></a></h2><p>parseST and the other functions detailed here get a filename as an argument.  The file should contain the data dumped by AVL using the ST menu.</p><h2>Definitions<a name="2"></a></h2><h2>Example<a name="3"></a></h2><pre class="codeinput">mySurfaces = parseSF(<span class="string">'../sampleData/plane9001.sf'</span>);
 
-<span class="comment">%Access any data field like this:</span>
-mySB.CXu
+<span class="comment">%Easily get the index of a particular surface whose name we know</span>
+sIndex = getSurfaceByName(mySurfaces,<span class="string">'Wing-Right'</span>);
+
+<span class="comment">%Get the strip forces for the surface</span>
+myStripForces = mySurfaces(sIndex).strip;
+
+<span class="comment">%You can then access a particular strip as shown below</span>
+myStripForces{1}
 </pre><pre class="codeoutput">
-ans =
+ans = 
 
-   -0.1221
+          j: 1
+        Yle: -0.6875
+      Chord: 0.2286
+       Area: 0.0108
+        ccl: 0.1612
+         ai: 0.2719
+    cl_norm: 0.7012
+         cl: 0.7012
+         cd: 0.0912
+        cdv: 0
+      cm_c4: -0.0991
+      cm_LE: -0.2754
+       CPxc: 0.3910
 
-</pre><h2>See also<a name="4"></a></h2><p><a href="parseST_help.html"><tt>parseST</tt></a>, <a href="parseSF_help.html"><tt>parseSF</tt></a>, <a href="parseConfig_help.html"><tt>parseConfig</tt></a>, <a href="parseRunCaseHeader_help.html"><tt>parseRunCaseHeader</tt></a>, <a href="parseRunCaseFile_help.html"><tt>parseRunCaseFile</tt></a></p><p><i>Copyright 2012 Joseph Moster</i></p><p class="footer"><br>
+</pre><h2>See also<a name="4"></a></h2><p><a href="parseSB_help.html"><tt>parseSB</tt></a>, <a href="parseST_help.html"><tt>parseST</tt></a>, <a href="parseConfig_help.html"><tt>parseConfig</tt></a>, <a href="parseRunCaseHeader_help.html"><tt>parseRunCaseHeader</tt></a>, <a href="parseRunCaseFile_help.html"><tt>parseRunCaseFile</tt></a>.</p><p><i>Copyright 2012 Joseph Moster</i></p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
-%% parseSB
-% Parse the data from a file containing the output of AVL's SB command
-%
-%% Syntax
-% parseSB(filename)
+%% parseSF
+% Parse the data from a file containing the output of AVL's ST command
 %
 %% Description
-% desc...
-
+% parseST and the other functions detailed here get a filename as an
+% argument.  The file should contain the data dumped by AVL using the
+% ST menu.
+%
+%% Definitions
+%
+%
 %% Example
-%parseSB similar to parseST but for SB files
-mySB = parseSB('../sampleData/plane2243.sb');
 
-%Access any data field like this:
-mySB.CXu
+mySurfaces = parseSF('../sampleData/plane9001.sf');
+
+%Easily get the index of a particular surface whose name we know
+sIndex = getSurfaceByName(mySurfaces,'Wing-Right');
+
+%Get the strip forces for the surface
+myStripForces = mySurfaces(sIndex).strip;
+
+%You can then access a particular strip as shown below
+myStripForces{1}
 
 %% See also 
-% <parseST_help.html |parseST|>, <parseSF_help.html |parseSF|>,
+% <parseSB_help.html |parseSB|>,
+% <parseST_help.html |parseST|>,
 % <parseConfig_help.html |parseConfig|>,
 % <parseRunCaseHeader_help.html |parseRunCaseHeader|>, 
-% <parseRunCaseFile_help.html |parseRunCaseFile|>
+% <parseRunCaseFile_help.html |parseRunCaseFile|>. 
 %
 % _Copyright 2012 Joseph Moster_
 ##### SOURCE END #####

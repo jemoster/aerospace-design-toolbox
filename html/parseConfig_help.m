@@ -1,23 +1,22 @@
-%% parseSB
+%% parseConfig
 % Parse the data from a file containing the output of AVL's SB command
 %
 %% Syntax
-% parseSB(filename)
+% parseConfig(filename)
 %
 %% Description
 % desc...
 
 %% Example
-%parseSB similar to parseST but for SB files
-mySB = parseSB('../sampleData/plane2243.sb');
 
-%Access any data field like this:
-mySB.CXu
+myConfigSB = parseConfig('../sampleData/plane2243.sb');
+
+fprintf(1,'The aircraft has a S reference area of %f \n', myConfigSB.Sref);
 
 %% See also 
+% <parseSB_help.html |parseSB|>,
 % <parseST_help.html |parseST|>, <parseSF_help.html |parseSF|>,
-% <parseConfig_help.html |parseConfig|>,
 % <parseRunCaseHeader_help.html |parseRunCaseHeader|>, 
-% <parseRunCaseFile_help.html |parseRunCaseFile|>
+% <parseRunCaseFile_help.html |parseRunCaseFile|>. 
 %
 % _Copyright 2012 Joseph Moster_
