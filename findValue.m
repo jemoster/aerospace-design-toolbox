@@ -5,9 +5,10 @@ function [value, line] = findValue(file, name, area)
             str = char(file(line));
             %Search the line for the keyword
             header = regexp(str, name);
-            %If we found something
+            %If we found a line with the keyword in it
             if(~isempty(header))
                 %Get the remainder of the string after the keyword
+                str
                 str = str(header+length(name):length(str));
                 %Split the string everytime a space is found
                 s2 = regexp(str, ' ', 'split');
@@ -20,7 +21,6 @@ function [value, line] = findValue(file, name, area)
                         end
                     end
                 end
-                warning(strcat('Could not find value for variable: ', name));
             end
         end
         warning(strcat('Did not variable in file: ', name));
