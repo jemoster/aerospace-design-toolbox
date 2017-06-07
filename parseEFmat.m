@@ -7,7 +7,7 @@ linesNumber = length(file);
 
 % Preallocate matrices of unknown size
 surfaces(floor(linesNumber/25),13) = 0;
-strips(linesNumber,19) = 0;
+aerostrips(linesNumber,19) = 0;
 vertices(linesNumber,7) = 0;
 
 % Loop over file lines
@@ -36,19 +36,19 @@ for i = 1:linesNumber
     if regexp(str, '^ Strip #')
        lStrip = sscanf(str, ' Strip # %i');
        ld = sscanf(str, ' Strip #  %i     # Chordwise =  %i   First Vortex =   %i');
-       strips(lStrip,1:2) = ld(2:3);
+       aerostrips(lStrip,1:2) = ld(2:3);
     elseif regexp(str, '^    Xle')
-        strips(lStrip,[3,6,9]) = sscanf(str, ' Xle = %f Ave. Chord = %f Incidence = %f');
+        aerostrips(lStrip,[3,6,9]) = sscanf(str, ' Xle = %f Ave. Chord = %f Incidence = %f');
     elseif regexp(str, '^    Yle')
-        strips(lStrip, [4,7,10]) = sscanf(str, ' Yle = %f Strip Width = %f Strip Area = %f');
+        aerostrips(lStrip, [4,7,10]) = sscanf(str, ' Yle = %f Strip Width = %f Strip Area = %f');
     elseif regexp(str, '^    Zle')
-        strips(lStrip, [5,8]) = sscanf(str, ' Zle = %f Strip Dihed. = %f');        
+        aerostrips(lStrip, [5,8]) = sscanf(str, ' Zle = %f Strip Dihed. = %f');        
     elseif regexp(str, '^    cl')
-        strips(lStrip, [11,12,13]) = sscanf(str, ' cl = %f cd = %f cdv = %f');
+        aerostrips(lStrip, [11,12,13]) = sscanf(str, ' cl = %f cd = %f cdv = %f');
     elseif regexp(str, '^    cn')
-        strips(lStrip, [14,15,16,17]) = sscanf(str, ' cn  = %f ca = %f cnc = %f wake dnwsh = %f');
+        aerostrips(lStrip, [14,15,16,17]) = sscanf(str, ' cn  = %f ca = %f cnc = %f wake dnwsh = %f');
     elseif regexp(str, '^    cmLE')
-        strips(lStrip, [18,19]) = sscanf(str, ' cmLE= %f cm c/4 = %f');
+        aerostrips(lStrip, [18,19]) = sscanf(str, ' cmLE= %f cm c/4 = %f');
     end
     
     % Vortex data
@@ -60,12 +60,12 @@ end
 
 % Resize matrices to right size
 surfaces(all(surfaces==0,2),:) = [];
-strips(all(strips==0,2),:) = [];
+aerostrips(all(aerostrips==0,2),:) = [];
 vertices(all(vertices==0,2),:) = [];
 
 % Assign matrices to output-struct
 y.surfaces = surfaces;
-y.strips = strips;
+y.strips = aerostrips;
 y.vertices = vertices(:,2:7);
         
 end
