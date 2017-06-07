@@ -6,7 +6,7 @@
     
     <!-- Supply the following six elements in the order specified -->
     <!-- (Required) element; matlabrelease content is not currently used -->
-    <matlabrelease>2012a</matlabrelease>
+    <matlabrelease>2016a</matlabrelease>
     <!-- (Required) The name element appears in the Contents pane -->
     <name>Aerospace Design</name>
     <!-- (Required) The type elementidentifies your package; pick one: -->
